@@ -21,6 +21,12 @@
 # production
 /build
 
+
+echo out.zip >> .gitignore
+echo out/ >> .gitignore
+echo node_modules/ >> .gitignore
+echo .next/ >> .gitignore
+
 # misc
 .DS_Store
 *.pem
