@@ -27,8 +27,8 @@ jobs:
       - name: Upload out folder to cPanel
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.66.116.209.42 }}
-          username: ${{ secrets.motio4bc }}
-          password: ${{ secrets.Puspen@#7055 }}
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./out/
           server-dir: /public_html/
