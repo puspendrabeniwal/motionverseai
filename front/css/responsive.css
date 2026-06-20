@@ -1,0 +1,144 @@
+@media (min-width: 576px) {
+
+  .container,
+  .container-sm {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {
+
+  /* Section Line Accent */
+  .section-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    letter-spacing: 2px;
+  }
+
+  .section-divider::before,
+  .section-divider::after {
+    content: "";
+    width: 40px;
+    height: 2px;
+    background-color: var(--red-color);
+    display: inline-block;
+  }
+}
+
+@media only screen and (min-width: 568px) and (max-width: 992px) {
+  .headingText {
+    font-size: 2.25rem;
+    line-height: 1.25;
+  }
+
+  .main-title {
+    font-size: 2.25rem;
+    line-height: 1.25;
+  }
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {}
+
+@media (min-width: 1100px) {
+  .container {
+    max-width: 1100px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 98%;
+  }
+
+  .row {
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+
+  .row>* {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1490px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .container {
+    max-width: 1500px;
+  }
+}
+
+@media (max-width: 1199px) {}
+
+@media (max-width: 991px) {}
+
+@media (max-width: 767px) {
+  .row {
+    margin-right: -7px;
+    margin-left: -7px;
+  }
+
+  .row>* {
+    padding-right: 7px;
+    padding-left: 7px;
+  }
+
+  .headingText {
+    font-size: 37px;
+    line-height: 50px !important;
+  }
+
+  .headingText span {
+    font-size: 34px;
+  }
+
+}
+
+@media (max-width: 576px) {
+  .main-title {
+    font-size: 2.25rem;
+    line-height: 1.25;
+  }
+
+  .headingText {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .counterSections .counterText {
+    font-size: 40px;
+  }
+
+}
+
+@media (max-width: 444px) {}
+
+@media (max-width: 350px) {
+  .row {
+    margin-right: -4px;
+    margin-left: -4px;
+  }
+
+  .row>* {
+    padding-right: 4px;
+    padding-left: 4px;
+  }
+}
+
+@media only screen and (min-width: 760px) and (max-width: 890px) {}
