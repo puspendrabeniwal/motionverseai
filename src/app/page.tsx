@@ -1,6 +1,38 @@
+"use client";
+
+import { useRef } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+
 export default function Home() {
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+
+  const handleVideoClick = (currentIndex: number) => {
+  const currentVideo = videoRefs.current[currentIndex];
+
+  if (!currentVideo) return;
+
+  // Agar video already play ho rahi hai to off/pause kar do
+  if (!currentVideo.paused) {
+    currentVideo.pause();
+    currentVideo.currentTime = 0;
+    return;
+  }
+
+  // Baaki sab videos band kar do
+  videoRefs.current.forEach((video, index) => {
+    if (!video) return;
+
+    if (index !== currentIndex) {
+      video.pause();
+      video.currentTime = 0;
+    }
+  });
+
+  // Current video play karo
+  currentVideo.play().catch(() => {});
+};
+
   return (
     <>
       <Header />
@@ -40,43 +72,75 @@ export default function Home() {
                 <div className="row">
                   <div className="col-6 mb-3">
                     <div className="video-box" style={{ height: '100px' }}>
-                      <video muted playsInline>
-                        <source src="/front/videos/pand-pain.mp4" type="video/mp4" />
-                      </video>
-                      <div className="video-overlay-play"><i className="fa-solid fa-play"></i></div>
+                      <video
+                        ref={(el) => {
+                          videoRefs.current[100] = el;
+                        }}
+                        src='/front/videos/pand-pain.mp4'
+                        //poster={video.poster}
+                        preload="metadata"
+                        onClick={() => handleVideoClick(100)}
+                      />
+                      
+                      {/* <div className="video-overlay-play"><i className="fa-solid fa-play"></i></div> */}
                     </div>
                   </div>
                   <div className="col-6 mb-3">
                     <div className="video-box" style={{ height: '100px' }}>
-                      <video muted playsInline>
-                        <source src="/front/videos/pand-pain.mp4" type="video/mp4" />
-                      </video>
-                      <div className="video-overlay-play"><i className="fa-solid fa-play"></i></div>
+                      <video
+                        ref={(el) => {
+                          videoRefs.current[1] = el;
+                        }}
+                        src='/front/videos/pand-pain.mp4'
+                        //poster={video.poster}
+                        preload="metadata"
+                        onClick={() => handleVideoClick(1)}
+                        
+                      />
+                      {/* <div className="video-overlay-play"><i className="fa-solid fa-play"></i></div> */}
                     </div>
                   </div>
 
                   <div className="col-12 mb-3">
                     <div className="video-box" style={{ height: '200px' }}>
-                      <video autoPlay muted playsInline>
-                        <source src="/front/videos/what-we-do.mp4" type="video/mp4" />
-                      </video>
-                      <div className="video-overlay-play" style={{ width: '46px', height: '46px' }}><i className="fa-solid fa-play fs-6"></i></div>
+                      <video
+                        ref={(el) => {
+                          videoRefs.current[2] = el;
+                        }}
+                        src='/front/videos/what-we-do.mp4'
+                        //poster={video.poster}
+                        preload="metadata"
+                        onClick={() => handleVideoClick(2)}
+                      />
+                      {/* <div className="video-overlay-play" style={{ width: '46px', height: '46px' }}><i className="fa-solid fa-play fs-6"></i></div> */}
                     </div>
                   </div>
                   <div className="col-6 mb-3">
                     <div className="video-box" style={{ height: '100px' }}>
-                      <video muted playsInline>
-                        <source src="/front/videos/first-one.mp4" type="video/mp4" />
-                      </video>
-                      <div className="video-overlay-play"><i className="fa-solid fa-play"></i></div>
+                      <video
+                        ref={(el) => {
+                          videoRefs.current[3] = el;
+                        }}
+                        src='/front/videos/first-one.mp4'
+                        //poster={video.poster}
+                        preload="metadata"
+                        onClick={() => handleVideoClick(3)}
+                      />
+                      {/* <div className="video-overlay-play"><i className="fa-solid fa-play"></i></div> */}
                     </div>
                   </div>
                   <div className="col-6 mb-3">
                     <div className="video-box" style={{ height: '100px' }}>
-                      <video autoPlay muted playsInline>
-                        <source src="/front/videos/her_football_kick.mp4" type="video/mp4" />
-                      </video>
-                      <div className="video-overlay-play"><i className="fa-solid fa-play"></i></div>
+                      <video
+                        ref={(el) => {
+                          videoRefs.current[4] = el;
+                        }}
+                        src='/front/videos/her_football_kick.mp4'
+                        //poster={video.poster}
+                        preload="metadata"
+                        onClick={() => handleVideoClick(4)}
+                      />
+                      {/* <div className="video-overlay-play"><i className="fa-solid fa-play"></i></div> */}
                     </div>
                   </div>
                 </div>
@@ -86,19 +150,31 @@ export default function Home() {
                 <div className="row">
                   <div className="col-12 mb-3">
                     <div className="video-box" style={{ height: '316px' }}>
-                      <video muted playsInline>
-                        <source src="/front/videos/facewash-ads.mp4" type="video/mp4" />
-                      </video>
-                      <div className="video-overlay-play"><i className="fa-solid fa-play"></i></div>
+                      <video
+                        ref={(el) => {
+                          videoRefs.current[5] = el;
+                        }}
+                        src='/front/videos/facewash-ads.mp4'
+                        //poster={video.poster}
+                        preload="metadata"
+                        onClick={() => handleVideoClick(5)}
+                      />
+                      {/* <div className="video-overlay-play"><i className="fa-solid fa-play"></i></div> */}
                       <span className="badge bg-orange position-absolute bottom-0 end-0 m-2 text-white fw-bold" style={{ fontSize: '10px;' }}>4K ULTRA HD</span>
                     </div>
                   </div>
                   <div className="col-12 mb-3">
                     <div className="video-box" style={{ height: '100px' }}>
-                      <video autoPlay muted playsInline>
-                        <source src="/front/videos/shadi-special.mp4" type="video/mp4" />
-                      </video>
-                      <div className="video-overlay-play"><i className="fa-solid fa-play"></i></div>
+                      <video
+                        ref={(el) => {
+                          videoRefs.current[6] = el;
+                        }}
+                        src='/front/videos/shadi-special.mp4'
+                        //poster={video.poster}
+                        preload="metadata"
+                        onClick={() => handleVideoClick(6)}
+                      />
+                      {/* <div className="video-overlay-play"><i className="fa-solid fa-play"></i></div> */}
                     </div>
                   </div>
                 </div>
@@ -147,16 +223,19 @@ export default function Home() {
           <div className="row">
             <div className="col-lg-7">
               <div className="work-card p-4 d-flex flex-column align-items-end justify-content-end">
-                <video className="video-bg">
-                  <source src="/front/videos/final-wildlife.mp4" type="video/mp4" />
-                </video>
+                <video
+                  ref={(el) => {
+                    videoRefs.current[10] = el;
+                  }}
+                  src='/front/videos/final-wildlife.mp4'
+                  //poster={video.poster}
+                  preload="metadata"
+                  onClick={() => handleVideoClick(10)}
+                  className="video-bg"
+                />
                 <div className="dark-gradient-overlay"></div>
 
                 <div className="work-card-content d-flex flex-column h-100 justify-content-end">
-                  <div><span className="badge bg-black text-white px-3 py-2 opacity-75 fw-bold"
-                    style={{ fontSize: '11px', letterSpacing: '1px' }}>PLAY <i className="fa-solid fa-play ms-1 text-red"
-                      style={{ fontSize: '9px' }}></i></span>
-                  </div>
                   <div className="mt-5 pt-5">
                     <h2 className="fw-bold text-white mb-3" style={{ fontSize: '1.9rem', lineHeight: '1.2' }}>Brand  Promotion<br /><span className="text-red"> Through Cinematic Storytelling</span></h2>
                     <div className="row g-3 mt-1 text-start">
@@ -190,20 +269,32 @@ export default function Home() {
               <div className="row">
                 <div className="col-6 mb-3">
                   <div className="video-box" style={{ height: '316px' }}>
-                    <video muted playsInline>
-                      <source src="/front/videos/facewash-ads.mp4" type="video/mp4" />
-                    </video>
-                    <div className="video-overlay-play"><i className="fa-solid fa-play"></i></div>
+                    <video
+                        ref={(el) => {
+                          videoRefs.current[8] = el;
+                        }}
+                        src='/front/videos/facewash-ads.mp4'
+                        //poster={video.poster}
+                        preload="metadata"
+                        onClick={() => handleVideoClick(8)}
+                      />
+                    {/* <div className="video-overlay-play"><i className="fa-solid fa-play"></i></div> */}
                     <span className="badge bg-orange position-absolute bottom-0 end-0 m-2 text-white fw-bold"
                       style={{ fontSize: '10px' }}>4K ULTRA HD</span>
                   </div>
                 </div>
                 <div className="col-6 mb-3">
                   <div className="video-box" style={{ height: '316px' }}>
-                    <video muted playsInline>
-                      <source src="/front/videos/facewash-ads.mp4" type="video/mp4" />
-                    </video>
-                    <div className="video-overlay-play"><i className="fa-solid fa-play"></i></div>
+                    <video
+                        ref={(el) => {
+                          videoRefs.current[9] = el;
+                        }}
+                        src='/front/videos/facewash-ads.mp4'
+                        //poster={video.poster}
+                        preload="metadata"
+                        onClick={() => handleVideoClick(9)}
+                      />
+                    {/* <div className="video-overlay-play"><i className="fa-solid fa-play"></i></div> */}
                     <span className="badge bg-orange position-absolute bottom-0 end-0 m-2 text-white fw-bold"
                       style={{ fontSize: '10px' }}>4K ULTRA HD</span>
                   </div>
@@ -327,10 +418,7 @@ export default function Home() {
             <div className="section-divider">Our <span>Services</span></div>
           </div>
           <p className="text-muted text-center small mb-4">We combine creativity, strategy, and AI-powered innovation to deliver impactful video solutions<br /> that help brands grow, engage audiences, and stand out in the digital world.</p>
-
           <div className="container text-center">
-
-
             <div className="video-tabs">
               <button className="btn tab-btn btn-red m-1 active" data-target="all">All Videos</button>
               <button className="btn tab-btn btn-red m-1" data-target="educational">#Educational</button>
@@ -343,57 +431,92 @@ export default function Home() {
               <div className="row row-cols-2 row-cols-md-4 g-3">
                 <div className="col">
                   <div className="service-video-card">
-                    <video>
-                      <source src="/front/videos/science-everywhere.mp4" type="video/mp4" />
-                    </video>
-
-                    <div className="service-video-overlay"></div>
+                    <video
+                      ref={(el) => {
+                        videoRefs.current[11] = el;
+                      }}
+                      src='/front/videos/science-everywhere.mp4'
+                      //poster={video.poster}
+                      preload="metadata"
+                      onClick={() => handleVideoClick(11)}
+                    />
+                    {/* <div className="service-video-overlay"></div> */}
                     <div className="service-video-title text-white">Science is everywhere</div>
                   </div>
                 </div>
                 <div className="col">
                   <div className="service-video-card">
-                    <video>
-                      <source src="/front/videos/mobile-ads.mp4" type="video/mp4" />
-                    </video>
-                    <div className="service-video-overlay"></div>
+                    <video
+                      ref={(el) => {
+                        videoRefs.current[12] = el;
+                      }}
+                      src='/front/videos/mobile-ads.mp4'
+                      //poster={video.poster}
+                      preload="metadata"
+                      onClick={() => handleVideoClick(12)}
+                    />
+                    {/* <div className="service-video-overlay"></div> */}
                     <div className="service-video-title text-white">Brand Promotion</div>
                   </div>
                 </div>
                 <div className="col">
                   <div className="service-video-card">
-                    <video>
-                      <source src="/front/videos/facewash-ads.mp4" type="video/mp4" />
-                    </video>
-                    <div className="service-video-overlay"></div>
+                    <video
+                      ref={(el) => {
+                        videoRefs.current[13] = el;
+                      }}
+                      src='/front/videos/facewash-ads.mp4'
+                      //poster={video.poster}
+                      preload="metadata"
+                      onClick={() => handleVideoClick(13)}
+                    />
+                    {/* <div className="service-video-overlay"></div> */}
                     <div className="service-video-title text-white">Advertising Video Editing</div>
                   </div>
                 </div>
                 <div className="col">
                   <div className="service-video-card">
-                    <video>
-                      <source src="/front/videos/funny.mp4" type="video/mp4" />
-                    </video>
-                    <div className="service-video-overlay"></div>
+                    <video
+                      ref={(el) => {
+                        videoRefs.current[14] = el;
+                      }}
+                      src='/front/videos/funny.mp4'
+                      //poster={video.poster}
+                      preload="metadata"
+                      onClick={() => handleVideoClick(14)}
+                    />
+                    {/* <div className="service-video-overlay"></div> */}
                     <div className="service-video-title text-white">Events Editing</div>
                   </div>
                 </div>
 
                 <div className="col">
                   <div className="service-video-card">
-                    <video>
-                      <source src="/front/videos/digestion-system.mp4" type="video/mp4" />
-                    </video>
-                    <div className="service-video-overlay"></div>
+                    <video
+                      ref={(el) => {
+                        videoRefs.current[15] = el;
+                      }}
+                      src='/front/videos/digestion-system.mp4'
+                      //poster={video.poster}
+                      preload="metadata"
+                      onClick={() => handleVideoClick(15)}
+                    />
+                    {/* <div className="service-video-overlay"></div> */}
                     <div className="service-video-title text-white">Digestion System</div>
                   </div>
                 </div>
                 <div className="col">
                   <div className="service-video-card">
-                    <video>
-                      <source src="/front/videos/Rajasthani-icecream.mp4" type="video/mp4" />
-                    </video>
-                    <div className="service-video-overlay"></div>
+                    <video
+                      ref={(el) => {
+                        videoRefs.current[21] = el;
+                      }}
+                      src='/front/videos/Rajasthani-icecream.mp4'
+                      //poster={video.poster}
+                      preload="metadata"
+                      onClick={() => handleVideoClick(21)}
+                    />
+                    {/* <div className="service-video-overlay"></div> */}
                     <div className="service-video-title text-white">Lovely Sweet</div>
                   </div>
                 </div>
@@ -405,19 +528,31 @@ export default function Home() {
               <div className="row row-cols-2 row-cols-md-4 g-3">
                 <div className="col">
                   <div className="service-video-card">
-                    <video muted playsInline>
-                      <source src="/front/videos/digestion-system.mp4" type="video/mp4" />
-                    </video>
-                    <div className="service-video-overlay"></div>
+                    <video
+                      ref={(el) => {
+                        videoRefs.current[16] = el;
+                      }}
+                      src='/front/videos/digestion-system.mp4'
+                      //poster={video.poster}
+                      preload="metadata"
+                      onClick={() => handleVideoClick(16)}
+                    />
+                    {/* <div className="service-video-overlay"></div> */}
                     <div className="service-video-title text-white">Digestion System</div>
                   </div>
                 </div>
                 <div className="col">
                   <div className="service-video-card">
-                    <video>
-                      <source src="/front/videos/science-everywhere.mp4" type="video/mp4" />
-                    </video>
-                    <div className="service-video-overlay"></div>
+                    <video
+                      ref={(el) => {
+                        videoRefs.current[17] = el;
+                      }}
+                      src='/front/videos/science-everywhere.mp4'
+                      //poster={video.poster}
+                      preload="metadata"
+                      onClick={() => handleVideoClick(17)}
+                    />
+                    {/* <div className="service-video-overlay"></div> */}
                     <div className="service-video-title text-white">Science is everywhere</div>
                   </div>
                 </div>
@@ -429,10 +564,16 @@ export default function Home() {
               <div className="row row-cols-2 row-cols-md-4 g-3">
                 <div className="col">
                   <div className="service-video-card">
-                    <video>
-                      <source src="/front/videos/mobile-ads.mp4" type="video/mp4" />
-                    </video>
-                    <div className="service-video-overlay"></div>
+                    <video
+                      ref={(el) => {
+                        videoRefs.current[18] = el;
+                      }}
+                      src='/front/videos/mobile-ads.mp4'
+                      //poster={video.poster}
+                      preload="metadata"
+                      onClick={() => handleVideoClick(18)}
+                    />
+                    {/* <div className="service-video-overlay"></div> */}
                     <div className="service-video-title text-white">Brand Promotion</div>
                   </div>
                 </div>
@@ -443,19 +584,31 @@ export default function Home() {
               <div className="row row-cols-2 row-cols-md-4 g-3">
                 <div className="col">
                   <div className="service-video-card">
-                    <video>
-                      <source src="/front/videos/funny.mp4" type="video/mp4" />
-                    </video>
-                    <div className="service-video-overlay"></div>
+                    <video
+                      ref={(el) => {
+                        videoRefs.current[19] = el;
+                      }}
+                      src='/front/videos/funny.mp4'
+                      //poster={video.poster}
+                      preload="metadata"
+                      onClick={() => handleVideoClick(19)}
+                    />
+                    {/* <div className="service-video-overlay"></div> */}
                     <div className="service-video-title text-white">Events Editing</div>
                   </div>
                 </div>
                 <div className="col">
                   <div className="service-video-card">
-                    <video>
-                      <source src="/front/videos/Rajasthani-icecream.mp4" type="video/mp4" />
-                    </video>
-                    <div className="service-video-overlay"></div>
+                    <video
+                      ref={(el) => {
+                        videoRefs.current[20] = el;
+                      }}
+                      src='/front/videos/Rajasthani-icecream.mp4'
+                      //poster={video.poster}
+                      preload="metadata"
+                      onClick={() => handleVideoClick(20)}
+                    />
+                    {/* <div className="service-video-overlay"></div> */}
                     <div className="service-video-title text-white">Lovely Sweet</div>
                   </div>
                 </div>
