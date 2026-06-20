@@ -14,7 +14,7 @@ export default function Header() {
                         </a>
                     </li> */}
                 </ul>
-                <a href="#" className="btn btn-red">Let's Talk 
+                <a href="https://wa.me/919024377055" target="_blank" className="btn btn-red">Let's Talk 
                     <i className="fa-solid fa-arrow-up-right-from-square" style={{fontSize: '11px'}}></i>
                 </a>
             </div>

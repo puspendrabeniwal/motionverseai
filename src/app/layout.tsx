@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import Script from "next/script";
 
 
 export const metadata: Metadata = {
@@ -26,7 +26,21 @@ export default function RootLayout({
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">{children}
+        <Script
+          src="/front/js/jquery.min.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="/front/js/bootstrap.min.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="/front/js/bootstrap.bundle.min.js"
+          strategy="afterInteractive"
+        />
+
+      </body>
     </html>
   );
 }

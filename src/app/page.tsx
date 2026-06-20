@@ -1,10 +1,12 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState("all");
+  
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   const handleVideoClick = (currentIndex: number) => {
@@ -33,6 +35,7 @@ export default function Home() {
   currentVideo.play().catch(() => {});
 };
 
+
   return (
     <>
       <Header />
@@ -44,7 +47,7 @@ export default function Home() {
             <p className="text-secondary mb-4 pb-2 lh-base">MotionVerseAI – Where every project is uniquely designed to match your brand, message, and audience.</p>
 
             <div className="d-flex gap-3 align-items-center mb-4 pb-2">
-              <a href="#" className="btn btn-red">Get Started <i className="fa-solid fa-arrow-up-right-from-square" style={{ fontSize: '11px' }}></i></a>
+              <a href="https://wa.me/919024377055" target="_blank" className="btn btn-red">Get Started <i className="fa-solid fa-arrow-up-right-from-square" style={{ fontSize: '11px' }}></i></a>
               <a href="#services" className="btn btn-outline-custom"><i className="fa-solid fa-circle-play text-red"></i>Our Services</a>
             </div>
 
@@ -70,44 +73,13 @@ export default function Home() {
             <div className="row g-3">
               <div className="col-lg-8">
                 <div className="row">
-                  <div className="col-6 mb-3">
-                    <div className="video-box" style={{ height: '100px' }}>
-                      <video
-                        ref={(el) => {
-                          videoRefs.current[100] = el;
-                        }}
-                        src='/front/videos/pand-pain.mp4'
-                        //poster={video.poster}
-                        preload="metadata"
-                        onClick={() => handleVideoClick(100)}
-                      />
-                      
-                      {/* <div className="video-overlay-play"><i className="fa-solid fa-play"></i></div> */}
-                    </div>
-                  </div>
-                  <div className="col-6 mb-3">
-                    <div className="video-box" style={{ height: '100px' }}>
-                      <video
-                        ref={(el) => {
-                          videoRefs.current[1] = el;
-                        }}
-                        src='/front/videos/pand-pain.mp4'
-                        //poster={video.poster}
-                        preload="metadata"
-                        onClick={() => handleVideoClick(1)}
-                        
-                      />
-                      {/* <div className="video-overlay-play"><i className="fa-solid fa-play"></i></div> */}
-                    </div>
-                  </div>
-
                   <div className="col-12 mb-3">
-                    <div className="video-box" style={{ height: '200px' }}>
+                    <div className="video-box" style={{ height: '315px' }}>
                       <video
                         ref={(el) => {
                           videoRefs.current[2] = el;
                         }}
-                        src='/front/videos/what-we-do.mp4'
+                        src='/front/videos/leopard-fight.mp4'
                         //poster={video.poster}
                         preload="metadata"
                         onClick={() => handleVideoClick(2)}
@@ -160,7 +132,7 @@ export default function Home() {
                         onClick={() => handleVideoClick(5)}
                       />
                       {/* <div className="video-overlay-play"><i className="fa-solid fa-play"></i></div> */}
-                      <span className="badge bg-orange position-absolute bottom-0 end-0 m-2 text-white fw-bold" style={{ fontSize: '10px;' }}>4K ULTRA HD</span>
+                      <span className="badge bg-orange position-absolute bottom-0 end-0 m-2 text-white fw-bold" style={{ fontSize: '10px' }}>4K ULTRA HD</span>
                     </div>
                   </div>
                   <div className="col-12 mb-3">
@@ -273,7 +245,7 @@ export default function Home() {
                         ref={(el) => {
                           videoRefs.current[8] = el;
                         }}
-                        src='/front/videos/facewash-ads.mp4'
+                        src='/front/videos/science-everywhere.mp4'
                         //poster={video.poster}
                         preload="metadata"
                         onClick={() => handleVideoClick(8)}
@@ -289,7 +261,7 @@ export default function Home() {
                         ref={(el) => {
                           videoRefs.current[9] = el;
                         }}
-                        src='/front/videos/facewash-ads.mp4'
+                        src='/front/videos/Rajasthani-icecream.mp4'
                         //poster={video.poster}
                         preload="metadata"
                         onClick={() => handleVideoClick(9)}
@@ -420,14 +392,39 @@ export default function Home() {
           <p className="text-muted text-center small mb-4">We combine creativity, strategy, and AI-powered innovation to deliver impactful video solutions<br /> that help brands grow, engage audiences, and stand out in the digital world.</p>
           <div className="container text-center">
             <div className="video-tabs">
-              <button className="btn tab-btn btn-red m-1 active" data-target="all">All Videos</button>
-              <button className="btn tab-btn btn-red m-1" data-target="educational">#Educational</button>
-              <button className="btn tab-btn btn-red m-1" data-target="brands">#Product Promo</button>
-              <button className="btn tab-btn btn-red m-1" data-target="events">#Short Form Content</button>
+              <button 
+                className={`btn tab-btn btn-red m-1 ${
+                  activeTab === "all" ? "active" : ""
+                }`} 
+                onClick={() => setActiveTab("all")}
+              >All Videos</button>
+              <button 
+                className={`btn tab-btn btn-red m-1 ${
+                  activeTab === "educational" ? "active" : ""
+                }`} 
+                onClick={() => setActiveTab("educational")}
+              >#Educational</button>
+              <button 
+                className={`btn tab-btn btn-red m-1 ${
+                  activeTab === "brands" ? "active" : ""
+                }`} 
+                onClick={() => setActiveTab("brands")}
+              >#Product Promo</button>
+              <button 
+                className={`btn tab-btn btn-red m-1 ${
+                  activeTab === "events" ? "active" : ""
+                }`} 
+                onClick={() => setActiveTab("events")}
+              >#Short Form Content</button>
             </div>
 
 
-            <div className="tab-content-box pt-3" id="all">
+            <div 
+              className={`tab-content-box pt-3 ${
+                activeTab === "all"  ? "" : "d-none"
+              }`} 
+              id="all"
+            >
               <div className="row row-cols-2 row-cols-md-4 g-3">
                 <div className="col">
                   <div className="service-video-card">
@@ -524,7 +521,12 @@ export default function Home() {
             </div>
 
 
-            <div className="tab-content-box pt-3 d-none" id="educational">
+            <div 
+              className={`tab-content-box pt-3 ${
+                activeTab === "educational" ? "" : "d-none"
+              }`} 
+              id="educational"
+            >
               <div className="row row-cols-2 row-cols-md-4 g-3">
                 <div className="col">
                   <div className="service-video-card">
@@ -560,7 +562,12 @@ export default function Home() {
             </div>
 
 
-            <div className="tab-content-box pt-3 d-none" id="brands">
+            <div 
+              className={`tab-content-box pt-3 ${
+                activeTab === "brands" ? "" : "d-none"
+              }`} 
+              id="brands"
+            >
               <div className="row row-cols-2 row-cols-md-4 g-3">
                 <div className="col">
                   <div className="service-video-card">
@@ -580,7 +587,11 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="tab-content-box pt-3 d-none" id="events">
+            <div 
+              className={`tab-content-box pt-3 ${
+                activeTab === "events" ? "" : "d-none"
+              }`} 
+              id="events">
               <div className="row row-cols-2 row-cols-md-4 g-3">
                 <div className="col">
                   <div className="service-video-card">
@@ -723,7 +734,7 @@ export default function Home() {
             <p className="text-muted small mb-0">Motivational, Educational, Spiritual & Business Videos Crafted with Creativity and AI</p>
           </div>
           <div className="position-relative d-flex flex-column align-items-center align-items-md-end gap-2" style={{ zIndex: 2 }}>
-            <a href="#" className="btn btn-red px-4 py-3 fw-bold">Get Started <i className="fa-solid fa-arrow-up-right-from-square"
+            <a href="https://wa.me/919024377055" target="_blank" className="btn btn-red px-4 py-3 fw-bold">Get Started <i className="fa-solid fa-arrow-up-right-from-square"
               style={{ fontSize: '11px' }}></i></a>
             <div className="d-flex align-items-center gap-2 mt-4">
               <div className="d-flex image-overlap">
