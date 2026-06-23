@@ -1,48 +1,57 @@
+'use client';
+
+import { usePathname } from 'next/navigation';
+import Link from "next/link";
+
 export default function Footer() {
+  const pathname = usePathname();
+
+  const isActive = (href: string) => {
+    if (href === '/') {
+      return pathname === '/';
+    }
+    return pathname.startsWith(href);
+  };
+
   return (
   <footer className="py-5 text-secondary">
     <div className="container">
       <div className="row g-4">
         <div className="col-lg-3 col-md-6">
-          <a className="navbar-brand fw-bold fs-3 text-white d-block mb-3" href="#">MotionVerse<span
-              className="text-red">AI</span></a>
-          <p className="small text-muted col-10 lh-base">Helping creators and brands grow with cinematic videos that capture attention and drive engagement.</p>
+          <Link className="navbar-brand fw-bold fs-3 text-white d-block mb-3" href="/">
+            MotionVerse<span className="text-red">AI</span>
+          </Link>
+          <p className="small text-muted lh-base">Helping creators and brands grow with cinematic videos that capture attention and drive engagement.</p>
           <div className="d-flex gap-2 mt-3">
-            <a href="https://www.instagram.com/motionverseai26" target="_blank" className="footer-social-icon"><i className="fa-brands fa-instagram"></i></a>
-            <a href="https://www.youtube.com/@motionverseai-g6h-z9q" target="_blank" className="footer-social-icon"><i className="fa-brands fa-youtube"></i></a>
-            <a href="https://www.linkedin.com/in/motionverse-ai-a88a84412" target="_blank" className="footer-social-icon"><i className="fa-brands fa-linkedin-in"></i></a>
+            <Link href="https://www.instagram.com/motionverseai26" target="_blank" className="footer-social-icon">
+              <i className="fa-brands fa-instagram"></i>
+            </Link>
+            <Link href="https://www.youtube.com/@motionverseai-g6h-z9q" target="_blank" className="footer-social-icon">
+              <i className="fa-brands fa-youtube"></i>
+            </Link>
+            <Link href="https://www.linkedin.com/in/motionverse-ai-a88a84412" target="_blank" className="footer-social-icon">
+              <i className="fa-brands fa-linkedin-in"></i>
+            </Link>
           </div>
         </div>
 
-        <div className="col-lg-2 col-md-6 col-6">
-          <h6 className="text-white small fw-bold mb-3 tracking-wider">SERVICES</h6>
-          <ul className="list-unstyled d-flex flex-column gap-2 small">
-            <li><a href="#services">Brand Videos</a></li>
-            <li><a href="#services">Corporate Videos</a></li>
-            <li><a href="#services">Explainer Videos</a></li>
-            <li><a href="#services">Content Automation</a></li>
-            <li><a href="#services">Short Form Content</a></li>
-            <li><a href="#services">Product Promo Videos</a></li>
-          </ul>
-        </div>
-
-        <div className="col-lg-2 col-md-6 col-6">
+        <div className="col-lg-3 col-md-6">
           <h6 className="text-white small fw-bold mb-3 tracking-wider">QUICK LINK</h6>
           <ul className="list-unstyled d-flex flex-column gap-2 small">
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">FAQs</a></li>
+            <li><Link href="/portfolio" className={isActive('/portfolio') ? 'footer-link-active' : ''}>Portfolio</Link></li>
+            <li><Link href="/pricing" className={isActive('/pricing') ? 'footer-link-active' : ''}>Pricing</Link></li>
+            <li><Link href="/about" className={isActive('/about') ? 'footer-link-active' : ''}>About Us</Link></li>
+            <li><Link href="/contact" className={isActive('/contact') ? 'footer-link-active' : ''}>Contact Us</Link></li>
+            <li><Link href="/faq" className={isActive('/faq') ? 'footer-link-active' : ''}>FAQs</Link></li>
           </ul>
         </div>
 
-        <div className="col-lg-2 col-md-6 col-6">
+        <div className="col-lg-3 col-md-6">
           <h6 className="text-white small fw-bold mb-3 tracking-wider">PAGES</h6>
           <ul className="list-unstyled d-flex flex-column gap-2 small">
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Refund Policy</a></li>
+            <li><Link href="/terms" className={isActive('/terms') ? 'footer-link-active' : ''}>Terms & Conditions</Link></li>
+            <li><Link href="/privacy" className={isActive('/privacy') ? 'footer-link-active' : ''}>Privacy Policy</Link></li>
+            <li><Link href="/refund" className={isActive('/refund') ? 'footer-link-active' : ''}>Refund Policy</Link></li>
           </ul>
         </div>
 
