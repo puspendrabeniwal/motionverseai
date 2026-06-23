@@ -1,0 +1,46 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#04070A" />
+      <stop offset="100%" stop-color="#0F0810" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF1744" />
+      <stop offset="100%" stop-color="#E91E63" />
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.4" r="0.45">
+      <stop offset="0%" stop-color="#FF1744" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#FF1744" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" rx="40" fill="url(#bgGradient)" />
+  <circle cx="300" cy="220" r="180" fill="url(#glow)" />
+  <circle cx="900" cy="260" r="120" fill="rgba(255, 23, 68, 0.08)" />
+  <circle cx="760" cy="520" r="100" fill="rgba(255, 23, 68, 0.12)" />
+  <circle cx="380" cy="540" r="80" fill="rgba(255, 255, 255, 0.05)" />
+  <g opacity="0.95">
+    <path d="M260 270C310 210 395 190 475 234C505 252 525 284 528 318C530 344 519 368 500 387C470 415 418 430 370 416C315 400 280 340 260 270Z" fill="#10131A" stroke="#FF1744" stroke-width="3" />
+    <path d="M352 300C382 280 430 281 465 311" stroke="#FF1744" stroke-width="2" stroke-linecap="round" />
+    <path d="M320 216C352 190 412 195 448 238" stroke="#FF1744" stroke-width="2" stroke-linecap="round" />
+    <path d="M400 320C430 310 460 336 462 368" stroke="#FF1744" stroke-width="2" stroke-linecap="round" />
+    <ellipse cx="395" cy="270" rx="7" ry="7" fill="#FF1744" />
+    <ellipse cx="432" cy="330" rx="7" ry="7" fill="#FF1744" />
+    <ellipse cx="341" cy="300" rx="6" ry="6" fill="#fff" opacity="0.8" />
+  </g>
+  <g opacity="0.95">
+    <rect x="550" y="220" width="370" height="340" rx="30" fill="#11131A" stroke="#FF1744" stroke-width="2" />
+    <circle cx="645" cy="310" r="18" fill="#FF1744" />
+    <circle cx="885" cy="310" r="18" fill="#FF1744" />
+    <line x1="565" y1="360" x2="925" y2="360" stroke="#FF1744" stroke-width="1.5" stroke-dasharray="8 10" />
+    <line x1="565" y1="410" x2="925" y2="410" stroke="#FF1744" stroke-width="1.5" stroke-dasharray="8 10" />
+    <line x1="565" y1="460" x2="925" y2="460" stroke="#FF1744" stroke-width="1.5" stroke-dasharray="8 10" />
+    <path d="M650 440C670 410 740 405 770 440" stroke="#FF1744" stroke-width="3" stroke-linecap="round" />
+    <path d="M610 270C650 260 715 307 725 340" stroke="#fff" stroke-width="1.5" stroke-linecap="round" />
+    <path d="M750 250C760 300 820 320 865 290" stroke="#fff" stroke-width="1.5" stroke-linecap="round" />
+    <circle cx="690" cy="520" r="28" fill="#FF1744" opacity="0.2" />
+  </g>
+  <path d="M560 140L700 180L780 140" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.7" />
+  <path d="M920 620C880 585 806 530 710 528C620 525 570 578 540 630" stroke="#FF1744" stroke-width="2" stroke-linecap="round" opacity="0.6" />
+  <path d="M1000 150L960 190L1040 210" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity="0.7" />
+  <path d="M260 650C310 610 420 606 500 620C560 630 630 660 700 680C800 710 880 700 930 670" stroke="#FF1744" stroke-width="2" stroke-linecap="round" opacity="0.35" />
+</svg>
