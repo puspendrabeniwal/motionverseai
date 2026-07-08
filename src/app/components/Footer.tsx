@@ -26,7 +26,7 @@ export default function Footer() {
             <Link href="https://www.instagram.com/motionverseai26" target="_blank" className="footer-social-icon">
               <i className="fa-brands fa-instagram"></i>
             </Link>
-            <Link href="https://www.youtube.com/@motionverseai-g6h-z9q" target="_blank" className="footer-social-icon">
+            <Link href="https://www.youtube.com/@motionverseai26" target="_blank" className="footer-social-icon">
               <i className="fa-brands fa-youtube"></i>
             </Link>
             <Link href="https://www.linkedin.com/in/motionverse-ai-a88a84412" target="_blank" className="footer-social-icon">

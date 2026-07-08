@@ -48,6 +48,7 @@ export default function PortfolioSection() {
                     preload="metadata"
                     onClick={() => handleVideoClick(0)}
                     className="w-100 h-100"
+                    poster='/front/image/fight.png'
                 />
                 </div>
             </div>
@@ -71,6 +72,8 @@ export default function PortfolioSection() {
                     preload="metadata"
                     onClick={() => handleVideoClick(1)}
                     className="video-bg"
+                    poster='/front/image/fight.png'
+                    
                     />
                     <div className="dark-gradient-overlay"></div>
                     <div className="work-card-content d-flex flex-column h-100 justify-content-end">
@@ -112,8 +115,9 @@ export default function PortfolioSection() {
                         src='/front/videos/science-everywhere.mp4'
                         preload="metadata"
                         onClick={() => handleVideoClick(2)}
+                        poster='/front/image/science-everywhere.png'
                         />
-                        <span className="badge bg-orange position-absolute bottom-0 end-0 m-2 text-white fw-bold" style={{ fontSize: '10px' }}>4K ULTRA HD</span>
+                        {/* <span className="badge bg-orange position-absolute bottom-0 end-0 m-2 text-white fw-bold" style={{ fontSize: '10px' }}>4K ULTRA HD</span> */}
                     </div>
                     </div>
                     <div className="col-6 mb-3">
@@ -125,8 +129,10 @@ export default function PortfolioSection() {
                         src='/front/videos/Rajasthani-icecream.mp4'
                         preload="metadata"
                         onClick={() => handleVideoClick(3)}
+                        poster='/front/image/Rajasthani-icecream.png'
+
                         />
-                        <span className="badge bg-orange position-absolute bottom-0 end-0 m-2 text-white fw-bold" style={{ fontSize: '10px' }}>4K ULTRA HD</span>
+                        {/* <span className="badge bg-orange position-absolute bottom-0 end-0 m-2 text-white fw-bold" style={{ fontSize: '10px' }}>4K ULTRA HD</span> */}
                     </div>
                     </div>
                 </div>
@@ -196,7 +202,7 @@ export default function PortfolioSection() {
                             videoRefs.current[11] = el;
                         }}
                         src='/front/videos/science-everywhere.mp4'
-                        //poster={video.poster}
+                        poster='/front/image/science-everywhere.png'
                         preload="metadata"
                         onClick={() => handleVideoClick(11)}
                         />
@@ -211,12 +217,12 @@ export default function PortfolioSection() {
                             videoRefs.current[12] = el;
                         }}
                         src='/front/videos/mobile-ads.mp4'
-                        //poster={video.poster}
+                        poster='/front/image/mobile-ads.png'
                         preload="metadata"
                         onClick={() => handleVideoClick(12)}
                         />
                         {/* <div className="service-video-overlay"></div> */}
-                        <div className="service-video-title text-white">Brand Promotion</div>
+                        {/* <div className="service-video-title text-white">Brand Promotion</div> */}
                     </div>
                     </div>
                     <div className="col">
@@ -226,7 +232,7 @@ export default function PortfolioSection() {
                             videoRefs.current[13] = el;
                         }}
                         src='/front/videos/facewash-ads.mp4'
-                        //poster={video.poster}
+                        poster='/front/image/facewash-ads.png'
                         preload="metadata"
                         onClick={() => handleVideoClick(13)}
                         />
@@ -241,12 +247,12 @@ export default function PortfolioSection() {
                             videoRefs.current[14] = el;
                         }}
                         src='/front/videos/funny.mp4'
-                        //poster={video.poster}
+                        poster='/front/image/funny.png'
                         preload="metadata"
                         onClick={() => handleVideoClick(14)}
                         />
                         {/* <div className="service-video-overlay"></div> */}
-                        <div className="service-video-title text-white">Events Editing</div>
+                        {/* <div className="service-video-title text-white">Events Editing</div> */}
                     </div>
                     </div>
 
@@ -257,7 +263,7 @@ export default function PortfolioSection() {
                             videoRefs.current[15] = el;
                         }}
                         src='/front/videos/digestion-system.mp4'
-                        //poster={video.poster}
+                        poster='/front/image/digestion-system.png'
                         preload="metadata"
                         onClick={() => handleVideoClick(15)}
                         />
@@ -272,7 +278,7 @@ export default function PortfolioSection() {
                             videoRefs.current[21] = el;
                         }}
                         src='/front/videos/Rajasthani-icecream.mp4'
-                        //poster={video.poster}
+                        poster='/front/image/Rajasthani-icecream.png'
                         preload="metadata"
                         onClick={() => handleVideoClick(21)}
                         />
@@ -298,12 +304,12 @@ export default function PortfolioSection() {
                             videoRefs.current[16] = el;
                         }}
                         src='/front/videos/digestion-system.mp4'
-                        //poster={video.poster}
+                        poster='/front/image/digestion-system.png'
                         preload="metadata"
                         onClick={() => handleVideoClick(16)}
                         />
                         {/* <div className="service-video-overlay"></div> */}
-                        <div className="service-video-title text-white">Digestion System</div>
+                        {/* <div className="service-video-title text-white">Digestion System</div> */}
                     </div>
                     </div>
                     <div className="col">
@@ -313,7 +319,7 @@ export default function PortfolioSection() {
                             videoRefs.current[17] = el;
                         }}
                         src='/front/videos/science-everywhere.mp4'
-                        //poster={video.poster}
+                        poster='/front/image/science-everywhere.png'
                         preload="metadata"
                         onClick={() => handleVideoClick(17)}
                         />
@@ -339,12 +345,12 @@ export default function PortfolioSection() {
                             videoRefs.current[18] = el;
                         }}
                         src='/front/videos/mobile-ads.mp4'
-                        //poster={video.poster}
+                        poster='/front/image/mobile-ads.png'
                         preload="metadata"
                         onClick={() => handleVideoClick(18)}
                         />
                         {/* <div className="service-video-overlay"></div> */}
-                        <div className="service-video-title text-white">Brand Promotion</div>
+                        {/* <div className="service-video-title text-white">Brand Promotion</div> */}
                     </div>
                     </div>
                 </div>
@@ -363,12 +369,12 @@ export default function PortfolioSection() {
                             videoRefs.current[19] = el;
                         }}
                         src='/front/videos/funny.mp4'
-                        //poster={video.poster}
+                        poster='/front/image/funny.png'
                         preload="metadata"
                         onClick={() => handleVideoClick(19)}
                         />
                         {/* <div className="service-video-overlay"></div> */}
-                        <div className="service-video-title text-white">Events Editing</div>
+                        {/* <div className="service-video-title text-white">Events Editing</div> */}
                     </div>
                     </div>
                     <div className="col">
@@ -378,7 +384,7 @@ export default function PortfolioSection() {
                             videoRefs.current[20] = el;
                         }}
                         src='/front/videos/Rajasthani-icecream.mp4'
-                        //poster={video.poster}
+                        poster='/front/image/Rajasthani-icecream.png'
                         preload="metadata"
                         onClick={() => handleVideoClick(20)}
                         />

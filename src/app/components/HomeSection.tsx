@@ -76,6 +76,7 @@ export default function HomeSection() {
                       src='/front/videos/leopard-fight.mp4'
                       preload="metadata"
                       onClick={() => handleVideoClick(2)}
+                      poster='/front/image/leopard-fight.png'
                     />
                   </div>
                 </div>
@@ -88,6 +89,7 @@ export default function HomeSection() {
                       src='/front/videos/first-one.mp4'
                       preload="metadata"
                       onClick={() => handleVideoClick(3)}
+                      poster='/front/image/first-one.png'
                     />
                   </div>
                 </div>
@@ -98,6 +100,7 @@ export default function HomeSection() {
                         videoRefs.current[4] = el;
                       }}
                       src='/front/videos/her_football_kick.mp4'
+                      poster='/front/image/her_football_kick.png'
                       preload="metadata"
                       onClick={() => handleVideoClick(4)}
                     />
@@ -115,10 +118,11 @@ export default function HomeSection() {
                         videoRefs.current[5] = el;
                       }}
                       src='/front/videos/facewash-ads.mp4'
+                      poster='/front/image/facewash-ads.png'
                       preload="metadata"
                       onClick={() => handleVideoClick(5)}
                     />
-                    <span className="badge bg-orange position-absolute bottom-0 end-0 m-2 text-white fw-bold" style={{ fontSize: '10px' }}>4K ULTRA HD</span>
+                    {/* <span className="badge bg-orange position-absolute bottom-0 end-0 m-2 text-white fw-bold" style={{ fontSize: '10px' }}>4K ULTRA HD</span> */}
                   </div>
                 </div>
                 <div className="col-12 mb-3">
@@ -128,6 +132,7 @@ export default function HomeSection() {
                         videoRefs.current[6] = el;
                       }}
                       src='/front/videos/shadi-special.mp4'
+                      poster='/front/image/shadi-special.png'
                       preload="metadata"
                       onClick={() => handleVideoClick(6)}
                     />
