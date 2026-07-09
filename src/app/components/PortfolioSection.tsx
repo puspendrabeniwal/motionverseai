@@ -40,7 +40,7 @@ export default function PortfolioSection() {
             </div>
             <div className="col-lg-6">
                 <div className="video-box" style={{ minHeight: '380px' }}>
-                <video
+                <video playsInline
                     ref={(el) => {
                     videoRefs.current[0] = el;
                     }}
@@ -64,7 +64,7 @@ export default function PortfolioSection() {
             <div className="row">
                 <div className="col-lg-7">
                 <div className="work-card p-4 d-flex flex-column align-items-end justify-content-end">
-                    <video
+                    <video playsInline
                     ref={(el) => {
                         videoRefs.current[1] = el;
                     }}
@@ -108,7 +108,7 @@ export default function PortfolioSection() {
                 <div className="row">
                     <div className="col-6 mb-3">
                     <div className="video-box" style={{ height: '316px' }}>
-                        <video
+                        <video playsInline
                         ref={(el) => {
                             videoRefs.current[2] = el;
                         }}
@@ -122,7 +122,7 @@ export default function PortfolioSection() {
                     </div>
                     <div className="col-6 mb-3">
                     <div className="video-box" style={{ height: '316px' }}>
-                        <video
+                        <video playsInline
                         ref={(el) => {
                             videoRefs.current[3] = el;
                         }}
@@ -197,7 +197,7 @@ export default function PortfolioSection() {
                 <div className="row row-cols-2 row-cols-md-4 g-3">
                     <div className="col">
                     <div className="service-video-card">
-                        <video
+                        <video playsInline
                         ref={(el) => {
                             videoRefs.current[11] = el;
                         }}
@@ -212,7 +212,7 @@ export default function PortfolioSection() {
                     </div>
                     <div className="col">
                     <div className="service-video-card">
-                        <video
+                        <video playsInline
                         ref={(el) => {
                             videoRefs.current[12] = el;
                         }}
@@ -227,7 +227,7 @@ export default function PortfolioSection() {
                     </div>
                     <div className="col">
                     <div className="service-video-card">
-                        <video
+                        <video playsInline
                         ref={(el) => {
                             videoRefs.current[13] = el;
                         }}
@@ -242,7 +242,7 @@ export default function PortfolioSection() {
                     </div>
                     <div className="col">
                     <div className="service-video-card">
-                        <video
+                        <video playsInline
                         ref={(el) => {
                             videoRefs.current[14] = el;
                         }}
@@ -258,7 +258,7 @@ export default function PortfolioSection() {
 
                     <div className="col">
                     <div className="service-video-card">
-                        <video
+                        <video playsInline
                         ref={(el) => {
                             videoRefs.current[15] = el;
                         }}
@@ -273,7 +273,7 @@ export default function PortfolioSection() {
                     </div>
                     <div className="col">
                     <div className="service-video-card">
-                        <video
+                        <video playsInline
                         ref={(el) => {
                             videoRefs.current[21] = el;
                         }}
@@ -299,7 +299,7 @@ export default function PortfolioSection() {
                 <div className="row row-cols-2 row-cols-md-4 g-3">
                     <div className="col">
                     <div className="service-video-card">
-                        <video
+                        <video playsInline
                         ref={(el) => {
                             videoRefs.current[16] = el;
                         }}
@@ -314,7 +314,7 @@ export default function PortfolioSection() {
                     </div>
                     <div className="col">
                     <div className="service-video-card">
-                        <video
+                        <video playsInline
                         ref={(el) => {
                             videoRefs.current[17] = el;
                         }}
@@ -340,7 +340,7 @@ export default function PortfolioSection() {
                 <div className="row row-cols-2 row-cols-md-4 g-3">
                     <div className="col">
                     <div className="service-video-card">
-                        <video
+                        <video playsInline
                         ref={(el) => {
                             videoRefs.current[18] = el;
                         }}
@@ -364,7 +364,7 @@ export default function PortfolioSection() {
                 <div className="row row-cols-2 row-cols-md-4 g-3">
                     <div className="col">
                     <div className="service-video-card">
-                        <video
+                        <video playsInline
                         ref={(el) => {
                             videoRefs.current[19] = el;
                         }}
@@ -379,7 +379,7 @@ export default function PortfolioSection() {
                     </div>
                     <div className="col">
                     <div className="service-video-card">
-                        <video
+                        <video playsInline
                         ref={(el) => {
                             videoRefs.current[20] = el;
                         }}
