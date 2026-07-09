@@ -22,7 +22,9 @@ jobs:
         run: npm install
 
       - name: Build Next.js static site
-        run: npm run build
+        run: |
+          npm run build
+          cp public/.htaccess out/.htaccess
 
       - name: Upload out folder to cPanel
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
